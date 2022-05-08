@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
-import { Col, Row } from 'react-bootstrap'
-import { Provider } from 'react-redux'
-import Header from './Header'
-import InputTabs from './InputTabs'
-import MachinePreview from '../preview/MachinePreview'
-import store from './store'
-import './App.scss'
+import React, { Component } from "react";
+import { Col, Row } from "react-bootstrap";
+import { Provider } from "react-redux";
+import Header from "./Header";
+import InputTabs from "./InputTabs";
+import MachinePreview from "../preview/MachinePreview";
+import store from "./store";
+import "./App.scss";
+import { FileReceiver } from "./FileReceiver";
 
 class App extends Component {
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <Header />
-
+          <FileReceiver />
           <main>
             <Row className="no-gutters">
               <Col className="full-page d-flex flex-column">
@@ -27,8 +28,8 @@ class App extends Component {
           </main>
         </div>
       </Provider>
-    )
+    );
   }
 }
 
-export default App
+export default App;

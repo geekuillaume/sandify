@@ -152,6 +152,12 @@ const layersSlice = createSlice({
       const transform = action.payload
       state.byId[transform.id].visible = !state.byId[transform.id].visible
     },
+    replaceLayers(state, action) {
+      state.byId = action.payload.byId;
+      state.allIds = action.payload.allIds;
+      state.current = action.payload.allIds[0];
+      state.selected =  action.payload.allIds[0];
+    }
   }
 })
 
@@ -172,7 +178,8 @@ export const {
   toggleGrow,
   toggleTrack,
   toggleTrackGrow,
-  toggleVisible
+  toggleVisible,
+  replaceLayers
 } = layersSlice.actions
 
 export default layersSlice.reducer
